@@ -211,7 +211,7 @@ Try {
 		}
 
 		# <Perform Uninstallation tasks here>
-		$exitCode = Execute-Process -Path "$envProgramFilesX86\Netbeans-11.0\uninstall.exe" -Parameters '--silent' -WindowStyle 'Hidden'
+		$exitCode = Execute-Process -Path "$envProgramFiles\Netbeans-11.0\uninstall.exe" -Parameters '--silent' -WindowStyle 'Hidden'
 		If (($exitCode.ExitCode -ne "0") -and ($mainExitCode -ne "3010")) { $mainExitCode = $exitCode.ExitCode }
 		Remove-RegistryKey -Key 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\nbi-nb-all-11.0.0.0.11' -ContinueOnError $True
 
