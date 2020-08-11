@@ -139,6 +139,7 @@ Try {
 		}
 
 		## <Perform Installation tasks here>
+		start-sleep -s 1
 		$exitCode = Execute-Process -Path "$dirFiles\Apache-NetBeans-12.0-bin-windows-x64.exe" -Parameters "--silent" -WindowStyle "Hidden" -WaitForMsiExec -PassThru
 		If (($exitCode.ExitCode -ne "0") -and ($mainExitCode -ne "3010")) { $mainExitCode = $exitCode.ExitCode }
 
